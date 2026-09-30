@@ -129,7 +129,7 @@ export default function Courses() {
                 <Button
                   variant="outline-navy"
                   arrow
-                  className="w-full px-3 py-[11px] text-[12px]"
+                  className="w-full !border !border-[#0F3B6E] px-3 py-[11px] text-[12px]"
                 >
                   Learn More
                 </Button>
