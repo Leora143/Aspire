@@ -3,6 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import RegisterForm from "../components/RegisterForm";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import "@fontsource-variable/caveat";
+
 import {
   Medal,
   ChartBar,
@@ -30,6 +32,7 @@ interface IconItem {
   title: string;
   text: string;
 }
+
 
 const whoWeAreFeatures: IconItem[] = [
   {
@@ -172,11 +175,12 @@ const About: FC = () => {
         className="flex min-h-[400px] items-center bg-[#0b2a55] bg-cover bg-center"
         style={{ backgroundImage: `url(${aboutHero})` }}
       >
-        <div className="mx-auto w-full max-w-[1170px] px-5">
-          <div className="max-w-[640px] py-14">
+        <div className="mx-auto w-full max-w-[1170px] px-1">
+          <div className="max-w-[640px] pr-6">
             <Eyebrow label="ABOUT ASPIRE" light />
-            <h1 className="mb-5 mt-[18px] font-['Poppins',sans-serif] text-[42px] font-bold leading-[1.2] text-white max-[640px]:text-[30px]">
+            <h1 className="mb-5 mt-[18px] font-['Poppins',sans-serif] text-[46px] font-extrabold leading-[1.4] text-white max-[640px]:text-[30px]">
               More Than
+              <br/>
               <span className="text-[#f5b400]"> a Language Institute</span>
             </h1>
             <p className="mb-[26px] max-w-[480px] font-['Poppins',sans-serif] text-[14.5px] font-normal leading-[1.65] text-[#dbe4f2]">
@@ -244,23 +248,41 @@ const About: FC = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute left-[4%] top-[6%] z-[2] flex flex-col font-['Caveat',cursive] leading-[1.05] text-[#0f3a72]">
-                <span className="text-[30px] font-bold">Same</span>
-                <span className="text-[30px] font-bold">Language.</span>
-                <span className="relative mt-0.5 inline-block text-[30px] font-bold after:absolute after:-bottom-1.5 after:left-0.5 after:right-2.5 after:h-[3px] after:rounded-sm after:bg-[#f5b400] after:content-['']">
-                  A Brighter You.
-                </span>
-              </div>
-              <img
-                className="block h-auto w-full"
-                src={cologneSketch}
-                alt="Cologne skyline illustration — Same language, a brighter you"
-              />
-            </div>
+<div className="relative [container-type:inline-size]">
+  {/* soft warm glow */}
+  <div className="pointer-events-none absolute left-[26%] top-[2%] z-[1] aspect-square w-[26%] rounded-full bg-[radial-gradient(circle,rgba(255,205,120,0.55)_0%,rgba(255,225,170,0.3)_45%,transparent_70%)] blur-xl" />
+
+  <img
+    className="block h-auto w-full"
+    src={cologneSketch}
+    alt="Cologne skyline illustration — Same language, a brighter you"
+  />
+
+  {/* text overlay, top-left corner of the image */}
+  <div className="absolute left-[2%] top-[14%] z-[2] flex flex-col font-['Caveat_Variable',cursive] font-semibold text-[#0f3a72] text-[5.6cqw] leading-[1.05] tracking-[0.3px]">
+    <span>Same</span>
+    <span>Language.</span>
+
+    <span className="relative inline-block">
+      A Brighter You.
+      <svg
+        className="absolute left-[4%] -bottom-[0.25em] h-[0.3em] w-[60%]"
+        viewBox="0 0 170 12"
+        fill="none"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M3 9 C 40 5, 100 3, 167 3"
+          stroke="#f5b400"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
           </div>
 
-          {/* ---------------- Core Values ---------------- */}
           <div className="mt-[70px] text-center">
             <div className="mb-10 text-center">
               <span className="mx-auto mb-2.5 block h-[3px] w-[26px] rounded-sm bg-[#f5b400]" />
@@ -294,7 +316,6 @@ const About: FC = () => {
         </div>
       </section>
 
-      {/* ---------------- Approach ---------------- */}
       <section className="py-16">
         <div className="mx-auto grid w-full max-w-[1170px] grid-cols-[300px_1fr] items-center gap-10 px-5 max-[992px]:grid-cols-1">
           <div>
@@ -326,7 +347,6 @@ const About: FC = () => {
         </div>
       </section>
 
-      {/* ---------------- Commitment ---------------- */}
       <section className="py-16">
         <div className="mx-auto w-full max-w-[1170px] px-5">
           <div className="grid grid-cols-[340px_1fr] gap-[50px] rounded-[22px] border border-[#e6ebf3] p-[46px] shadow-[0_20px_50px_rgba(20,40,80,0.08)] max-[992px]:grid-cols-1 max-[640px]:p-[26px]">

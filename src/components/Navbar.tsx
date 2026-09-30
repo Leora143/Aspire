@@ -237,8 +237,8 @@ export function Navbar() {
         <div className="flex items-center gap-4">
 
           {/* Apply Now */}
-          <a
-            href="#register"
+          <Link
+            to="/register"
             className="
               inline-flex
               items-center
@@ -257,9 +257,9 @@ export function Navbar() {
               size={16}
               weight="bold"
             />
-          </a>
+          </Link>
 
-          {/* Brochure */}
+          {/* Brochure
           <a
             href="#register"
             className="
@@ -283,7 +283,7 @@ export function Navbar() {
               weight="bold"
               className="text-[#64748B]"
             />
-          </a>
+          </a> */}
 
         </div>
       </nav>

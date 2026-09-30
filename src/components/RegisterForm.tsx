@@ -7,6 +7,7 @@ import {
   Monitor,
   ChatText,
   CaretDown,
+  CheckCircle,
 } from "@phosphor-icons/react";
 import Button from "./Button";
 
@@ -21,13 +22,11 @@ export default function RegisterForm() {
       message: "",
     },
 
-    onSubmit: async ({ value }) => {
-      console.log("Registration submitted:", value);
+onSubmit: async ({ value }) => {
+  console.log("Registration submitted:", value);
 
-      alert("Thanks! We will get in touch with you soon.");
-
-      form.reset();
-    },
+  form.reset();
+},
   });
 
   return (
@@ -475,6 +474,37 @@ export default function RegisterForm() {
           >
             Submit Application
           </Button>
+                   
+          
+
+          {/* Success message */}
+          <form.Subscribe selector={(state) => state.isSubmitSuccessful}>
+            {(isSubmitSuccessful) =>
+              isSubmitSuccessful && (
+                <div
+                  role="status"
+                  className="
+                    mt-6
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    rounded-lg
+                    bg-[#dcfce7]
+                    px-4
+                    py-3.5
+                    text-[13px]
+                    font-semibold
+                    leading-none
+                    text-[#16a34a]
+                  "
+                >
+                  <CheckCircle size={14} weight="regular" />
+                  Thank you! We will contact you soon.
+                </div>
+              )
+            }
+          </form.Subscribe>
         </form>
       </div>
     </section>

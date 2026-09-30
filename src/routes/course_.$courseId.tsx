@@ -76,7 +76,6 @@ const Eyebrow: FC<{ label: string }> = ({ label }) => (
   </span>
 );
 
-/** cream / light-blue icon squares alternate through every list */
 const iconBg = (index: number) => (index % 2 === 0 ? 'bg-[#fdf1d8]' : 'bg-[#e6eefb]');
 
 const CourseDetail: FC = () => {
@@ -153,7 +152,6 @@ const CourseDetail: FC = () => {
           </div>
         </section>
 
-        {/* ---------------- About + What you'll learn ---------------- */}
         <section className="py-10">
           <div className="mx-auto w-full max-w-[1170px] px-5">
             <div className="rounded-[6px] border border-[#e6ebf3] bg-white p-[34px] shadow-[0_10px_40px_rgba(20,40,80,0.10)] max-[640px]:p-[22px]">
@@ -254,7 +252,6 @@ const CourseDetail: FC = () => {
           </div>
         </section>
 
-        {/* ---------------- Related courses ---------------- */}
         <section className="pb-20 pt-14">
           <div className="mx-auto w-full max-w-[1170px] px-5">
             <div className="mb-10 text-center">
