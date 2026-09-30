@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CourseRouteImport } from './routes/course'
+import { Route as RegisterRouteImport } from './routes/register'
 import { Route as CourseCourseIdRouteImport } from './routes/course_.$courseId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const CourseRoute = CourseRouteImport.update({
   path: '/course',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CourseCourseIdRoute = CourseCourseIdRouteImport.update({
   id: '/course_/$courseId',
   path: '/course/$courseId',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/course': typeof CourseRoute
+  '/register': typeof RegisterRoute
   '/course/$courseId': typeof CourseCourseIdRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/course': typeof CourseRoute
+  '/register': typeof RegisterRoute
   '/course/$courseId': typeof CourseCourseIdRoute
 }
 export interface FileRoutesById {
@@ -61,15 +69,24 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/course': typeof CourseRoute
+  '/register': typeof RegisterRoute
   '/course_/$courseId': typeof CourseCourseIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/course' | '/course/$courseId'
+  fullPaths:
+    '/' | '/about' | '/contact' | '/course' | '/register' | '/course/$courseId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/course' | '/course/$courseId'
+  to:
+    '/' | '/about' | '/contact' | '/course' | '/register' | '/course/$courseId'
   id:
-    '__root__' | '/' | '/about' | '/contact' | '/course' | '/course_/$courseId'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/course'
+    | '/register'
+    | '/course_/$courseId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +94,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   CourseRoute: typeof CourseRoute
+  RegisterRoute: typeof RegisterRoute
   CourseCourseIdRoute: typeof CourseCourseIdRoute
 }
 
@@ -110,6 +128,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CourseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/course_/$courseId': {
       id: '/course_/$courseId'
       path: '/course/$courseId'
@@ -125,6 +150,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   CourseRoute: CourseRoute,
+  RegisterRoute: RegisterRoute,
   CourseCourseIdRoute: CourseCourseIdRoute,
 }
 export const routeTree = rootRouteImport

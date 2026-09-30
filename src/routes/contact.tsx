@@ -212,7 +212,6 @@ const ContactPage: FC = () => {
       <RegisterForm />
 
       <div className="bg-white font-['Inter',sans-serif] text-[#5f6b7d]">
-        {/* ---------------- Find us ---------------- */}
         <section className="py-20">
           <div className="mx-auto grid w-full max-w-[1170px] grid-cols-[1fr_1.35fr] items-center gap-[60px] px-5 max-[992px]:grid-cols-1">
             <div>
@@ -255,7 +254,6 @@ const ContactPage: FC = () => {
           </div>
         </section>
 
-        {/* ---------------- Follow us ---------------- */}
         <section className="bg-[#f8fafd] px-5 py-10">
           <div className="mx-auto grid w-full max-w-[900px] grid-cols-3 gap-6 max-[992px]:grid-cols-1">
             {socials.map((social) => (

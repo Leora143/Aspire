@@ -79,7 +79,6 @@ const Course: FC = () => {
   return (
     <>
       <div className="bg-white font-['Inter',sans-serif] text-[#5f6b7d]">
-        {/* ---------------- Hero ---------------- */}
         <section className="relative flex min-h-[360px] items-center overflow-hidden bg-gradient-to-r from-[#0b2a55] to-[#0a3a80]">
           <div
             className="absolute inset-y-0 right-0 w-[62%] bg-cover bg-bottom max-[992px]:w-full max-[992px]:opacity-25"
@@ -106,7 +105,6 @@ const Course: FC = () => {
           </div>
         </section>
 
-        {/* ---------------- Courses ---------------- */}
         <section id="courses" className="py-16">
           <div className="mx-auto w-full max-w-[1170px] px-5">
             <div className="mb-10 text-center">
@@ -138,7 +136,6 @@ const Course: FC = () => {
           </div>
         </section>
 
-        {/* ---------------- Why Choose Aspire ---------------- */}
         <section className="pb-20 pt-6">
           <div className="mx-auto grid w-full max-w-[1170px] grid-cols-[360px_1fr] items-center gap-[50px] px-5 max-[992px]:grid-cols-1">
             <div>
