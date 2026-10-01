@@ -23,9 +23,27 @@ export default function RegisterForm() {
     },
 
 onSubmit: async ({ value }) => {
-  console.log("Registration submitted:", value);
+  try {
+    const response = await fetch("http://localhost:5000/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(value),
+    });
 
-  form.reset();
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Registration failed");
+    }
+
+    console.log(data.message);
+
+    form.reset();
+  } catch (error) {
+    console.error("Registration failed:", error);
+  }
 },
   });
 

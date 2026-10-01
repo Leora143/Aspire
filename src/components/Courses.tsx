@@ -1,6 +1,7 @@
 import Button from "./Button";
 import courseBg from "../assets/coursecardbg.png";
 import student from "../assets/coursecardboy.png";
+import { Link } from "@tanstack/react-router";
 
 const courses = ["A1", "A2", "B1", "B2"].map((level) => ({
   level,
@@ -141,7 +142,9 @@ export default function Courses() {
         {/* View more */}
         <div className="mt-10 text-center">
           <Button variant="navy" arrow className="px-[38px] py-[15px] text-[12px]">
+            <Link to="/course">
             View More Courses
+            </Link>
           </Button>
         </div>
       </div>
