@@ -1,5 +1,6 @@
 import Button from './Button';
 import heroBg from '../assets/herobg.png';
+import { Link } from "@tanstack/react-router";
 
 
 export default function Hero() {
@@ -25,8 +26,10 @@ export default function Hero() {
             Quality German language training to help you unlock new opportunities — in academics, career, and life.
           </p>
           <div className="mb-[34px] flex gap-[14px]">
-            <Button variant="outline-light" className="min-w-[120px] px-5 py-[13px] text-[14px]">Explore Courses</Button>
-            <Button variant="Yellow" arrow className="min-w-[120px] px-5 py-[13px] text-[14px]">Apply Now</Button>
+            <Button variant="outline-light" className="min-w-[120px] px-5 py-[13px] text-[14px]"><Link to="/course">Explore Courses</Link></Button>
+            <Button variant="Yellow" arrow className="min-w-[120px] px-5 py-[13px] text-[14px]"> <Link to="/register">
+  Apply Now
+</Link></Button>
           </div>
           <div className    ="   flex items-center gap-2.5
               text-[13px] font-medium tracking-[2px] text-[#dbe4f2]">

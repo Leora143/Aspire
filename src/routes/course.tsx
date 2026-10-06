@@ -5,6 +5,8 @@ import { courses } from "../data/courseData";
 import RegisterForm from "../components/RegisterForm";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import { Link } from '@tanstack/react-router';
+
 import {
   User,
   BookOpen,
@@ -95,12 +97,12 @@ const Course: FC = () => {
                 Your German Journey
                 <span className="block text-[#f5b400]">Starts Here.</span>
               </h1>
-              <a
-                href="#courses"
+              <Link
+                to="/register"
                 className="inline-flex items-center gap-2 rounded-md bg-[#f5b400] px-6 py-3.5 font-['Poppins',sans-serif] text-[13px] font-semibold leading-none text-[#0b2a55]"
               >
-                Explore Our Courses <ArrowRight size={14} weight="bold" />
-              </a>
+                Register Now <ArrowRight size={14} weight="bold" />
+              </Link>
             </div>
           </div>
         </section>
@@ -148,12 +150,12 @@ const Course: FC = () => {
                 At Aspire Academy, we go beyond language classes. We provide the right guidance, structure and
                 support to help you build real skills and create better opportunities for your future in Germany.
               </p>
-              <a
+              <Link to = "/register"
                 href="#courses"
                 className="inline-flex items-center gap-2 rounded-md bg-[#0b2a55] px-4 py-3 font-['Poppins',sans-serif] text-xs font-semibold leading-none text-white"
               >
-                Explore Our Courses <ArrowRight size={13} weight="bold" />
-              </a>
+                Register Now <ArrowRight size={13} weight="bold" />
+              </Link>
               <div className="mt-10">
                 <Eyebrow label="GERMAN FOR A BRIGHTER TOMORROW" />
               </div>

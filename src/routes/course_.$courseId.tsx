@@ -5,6 +5,8 @@ import RegisterForm from "../components/RegisterForm";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { courses, getCourseById } from "../data/courseData";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/700.css";
 import {
   ArrowRight,
   DownloadSimple,
@@ -165,27 +167,28 @@ const CourseDetail: FC = () => {
                     {course.aboutText}
                   </p>
                 </div>
+<div className="relative min-h-[280px]">
+  <span className="absolute left-[2%] top-0 z-[2] font-['Poppins',sans-serif] text-[56px] font-bold leading-none text-[#f7d77a]">
+    “
+  </span>
 
-                <div className="relative min-h-[280px]">
-                  <span className="absolute left-[2%] top-0 z-[2] font-['Poppins',sans-serif] text-[56px] font-bold leading-none text-[#f7d77a]">
-                    “
-                  </span>
-                  <div className="relative z-[2] pl-[2%] pt-10">
-                    <p className="max-w-[260px] font-['Caveat',cursive] text-[38px] font-medium leading-[1.05] text-[#0f3a72]">
-                      A new language opens new doors.
-                    </p>
-                    <i className="mb-3 mt-3 block h-[3px] w-[54px] rounded-sm bg-[#f5b400]" />
-                    <p className="font-['Poppins',sans-serif] text-[13px] leading-[1.6] text-[#5f6b7d]">
-                      Same Language.
-                      <br />A Brighter You.
-                    </p>
-                  </div>
-                  <img
-                    className="absolute bottom-0 right-0 h-auto w-[92%] opacity-90"
-                    src={cologneSketch}
-                    alt="Cologne skyline illustration"
-                  />
-                </div>
+  <div className="relative z-[2] pl-[2%] pt-10">
+    <p className="max-w-[260px] font-['Caveat_Variable',cursive] text-[38px] font-semibold leading-[1.05] text-[#0f3a72]">
+      A new language opens new doors.
+    </p>
+    <i className="mb-3 mt-3 block h-[3px] w-[54px] rounded-sm bg-[#f5b400]" />
+    <p className="font-['Poppins',sans-serif] text-[13px] leading-[1.6] text-[#5f6b7d]">
+      Same Language.
+      <br />A Brighter You.
+    </p>
+  </div>
+
+  <img
+    className="pointer-events-none absolute bottom-0 right-0 h-auto w-[92%] opacity-90"
+    src={cologneSketch}
+    alt="Cologne skyline illustration"
+  />
+</div>
               </div>
 
               {/* info tiles */}
@@ -268,7 +271,7 @@ const CourseDetail: FC = () => {
             </div>
 
             <div className="grid grid-cols-4 gap-[22px] max-[992px]:grid-cols-2 max-[640px]:grid-cols-1">
-              {relatedCourses.map((item) => (
+              {relatedCourses.slice(0, 4).map((item) => (
                 <CourseCard
                   key={item.id}
                   courseId={item.id}
